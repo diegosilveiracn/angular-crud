@@ -1,0 +1,18 @@
+<h1>Produtos</h1>
+
+<table>
+    <tr>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+    </tr>
+
+@for(produto of listaProdutos; track produto){
+    <tr>
+        <td>{{produto.codigo}}</td>
+        <td>{{produto.descricao}}</td>
+        <td>{{produto.preco}}</td>
+    </tr>
+}
+
+</table>
