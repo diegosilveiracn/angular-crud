@@ -7,7 +7,7 @@ import { Produto } from './types';
   providedIn: 'root',
 })
 export class ProdutoService {
-  apiUrl = "http://localhost:8080/produtos";
+  apiUrl = "http://localhost:8080/produto";
   
   private http = inject(HttpClient);
 
