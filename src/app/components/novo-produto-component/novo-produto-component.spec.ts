@@ -1,0 +1,22 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { NovoProdutoComponent } from './novo-produto-component';
+
+describe('NovoProdutoComponent', () => {
+  let component: NovoProdutoComponent;
+  let fixture: ComponentFixture<NovoProdutoComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [NovoProdutoComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(NovoProdutoComponent);
+    component = fixture.componentInstance;
+    await fixture.whenStable();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

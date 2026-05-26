@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from '../../services/produto-service';
-import { Produto } from '../../services/types';
+import { Produto, ProdutoService } from '../../services/produto-service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class ProdutoComponent implements OnInit{
 
+  titulo = "Produtos";
+
   listaProdutos: Produto[] = [];
 
   constructor(private produtoService: ProdutoService, private router: Router){ }
@@ -20,4 +21,18 @@ export class ProdutoComponent implements OnInit{
       this.listaProdutos = produtos
     });
   }
-}
+
+  novo(): void{
+    this.router.navigate(["novoProduto"]);
+  }
+
+  editar(id:number): void{
+    this.router.navigate(["editarProduto/"+id]);
+  }
+  
+  excluir(id: number): void {
+    this.produtoService.excluir(id).subscribe(() => {
+        this.listaProdutos = this.listaProdutos.filter(p => p.id !== id);
+    });
+  }
+} 

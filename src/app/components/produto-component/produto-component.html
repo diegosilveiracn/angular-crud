@@ -1,16 +1,24 @@
-<h1>Produtos</h1>
+<h1>{{titulo}}</h1>
+
+<button (click)="novo()">Novo</button>
 
 <table>
     <tr>
         <th>Código</th>
         <th>Descrição</th>
         <th>Preço</th>
+        <th>Ações</th>
+
     </tr>
 @for(produto of listaProdutos; track produto){
     <tr>
         <td>{{produto.id}}</td>
         <td>{{produto.descricao}}</td>
         <td>{{produto.preco}}</td>
+        <td>
+            <button (click)="editar(produto.id)">Editar</button>
+            <button (click)="excluir(produto.id)">Excluir</button>
+        </td>
     </tr>
 }
 </table>
