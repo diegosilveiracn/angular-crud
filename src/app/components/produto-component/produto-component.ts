@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto, ProdutoService } from '../../services/produto-service';
 import { Router } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-produto-component',
-  imports: [],
+  imports: [MatTableModule, MatButtonModule],
   templateUrl: './produto-component.html',
   styleUrl: './produto-component.css',
 })
@@ -13,6 +15,8 @@ export class ProdutoComponent implements OnInit{
   titulo = "Produtos";
 
   listaProdutos: Produto[] = [];
+
+  displayedColumns: string[] = ['id', 'descricao', 'preco', 'acoes'];
 
   constructor(private produtoService: ProdutoService, private router: Router){ }
 

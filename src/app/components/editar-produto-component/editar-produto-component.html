@@ -2,6 +2,11 @@
 
 <form>
     <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput readonly name="input-id" [(ngModel)]="produto.id"/>   
+    </mat-form-field><br>
+
+    <mat-form-field>
         <mat-label>Descrição</mat-label>
         <input matInput name="input-descricao" [(ngModel)]="produto.descricao"/>   
     </mat-form-field><br>
@@ -11,6 +16,6 @@
         <input matInput name="input-preco" [(ngModel)]="produto.preco"/>
     </mat-form-field><br>
 
-    <button mat-raised-button (click)="salvar()">Salvar</button>
+    <button mat-raised-button (click)="alterar()">Alterar</button>
     <button mat-raised-button (click)="cancelar()">Concelar</button>
 </form>

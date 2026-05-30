@@ -1,11 +1,14 @@
 import { Component, numberAttribute, OnInit } from '@angular/core';
-import { Produto, ProdutoService } from '../services/produto-service';
+import { Produto, ProdutoService } from '../../services/produto-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-editar-produto-component',
-  imports: [FormsModule],
+  imports: [FormsModule, MatButtonModule, MatFormFieldModule, MatInputModule],
   templateUrl: './editar-produto-component.html',
   styleUrl: './editar-produto-component.css',
 })
